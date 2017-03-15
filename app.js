@@ -146,15 +146,18 @@ function animateBar(correct) {
 	
 	setTimeout(function(x){ 
 		$('#total_score').text( Number($('#total_score').text())+100 )
+
+		//You can look at the total score and adjust the ranking's here too.  SO for instance if the user hits 5000 points run some CRAZY ANIMATION, and change her/his ranking, and save to local storage. 
+		
 		//console.log(x)  NOTICE THE X variable is being kept in the scope using a closure.  Remove it after the 2000 below to see what happens.  
 		$('#coin-sfx')[0].pause();
 	
        		$('#right-sfx')[0].play();
 
-	         if(x%10==0){
+	         if(x%10==0){ 
 		       $('#total_score').addClass('run-animation');
 		 }
-
+	
 
 	},2000,x)
 
