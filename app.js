@@ -142,7 +142,7 @@ function animateBar(correct) {
 	var left = (Math.floor(Math.random() * window.innerWidth) + 1 + 'px');
 	var coin = '<div class="coin" style="left:'+left+'"><div class="front"></div><div class="front_b"></div><div class="back"></div><div class="back_b"></div></div>'
 	$('body').append(coin);
-	$('#coin-sfx')[0].play();
+	//$('#coin-sfx')[0].play();
 	
 	setTimeout(function(x){ 
 		$('#total_score').text( Number($('#total_score').text())+100 )
