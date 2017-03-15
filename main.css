@@ -586,9 +586,45 @@ body {
 }
 
 #total_score{
-	position:fixed;
-	top:0;
 	font-size:2em;
-	width:100%;
+	padding:.2em 5em;
+	margin:1em 0;
+	background:white;
+	color:pink;
 	text-align:center;
+
+	transition: all 1s;
+	opacity: 1;
 }
+
+
+
+@keyframes my-animation {        
+  0% {
+    opacity : 1;
+    margin:1em;
+    
+  }
+  25% {
+    margin:3em
+    
+  }
+  50%{
+    color:gold;
+  }  
+  75%{
+    margin:3em
+  
+  }  
+
+  100% {
+    opacity : 1;
+    margin:1em;
+  
+  }    
+}
+
+#total_score.run-animation {
+	animation: my-animation 2s forwards;
+}
+

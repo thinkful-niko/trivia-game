@@ -13,6 +13,8 @@
 
 	<div class="container">	
 		<img src="img/tnlogo.png" alt="Trivia Nerd title graphic" class="logo">
+		
+		<div id="total_score">0</div>
 
 		<h3 class="last-display hide">Last played: <span id="last-play"></span></h3>
 
@@ -53,7 +55,6 @@
 
 		<div id="game" class="hide">
 
-			<div id="total_score">0</div>
 			
 			<p class="question"><span>Question:</span><br /><span id="q"></span></p>
 
@@ -92,7 +93,8 @@
 	<audio id="right-sfx" class="hide"><source src="sounds/right.wav" type="audio/wav"></audio>
 	<audio id="success-sfx" class="hide"><source src="sounds/success.wav" type="audio/wav"></audio>
 	<audio id="fail-sfx" class="hide"><source src="sounds/game_over.mp3" type="audio/mp3"></audio>
-
+	<audio id="coin-sfx" class="hide"><source src="sounds/coins-drop.mp3" type="audio/wav"></audio>
+	
  	<script src="https://code.jquery.com/jquery-3.1.0.js"></script> 
  	<script type="text/javascript" src="app.js" ></script>
 </body>

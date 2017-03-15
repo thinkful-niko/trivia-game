@@ -128,7 +128,7 @@ function activateButtons(num, correctAnswer, correct, incorrect) {
 
 //Animate progress bar
 function animateBar(correct) {
-	var progressbar = $('#score-bar'); 
+    var progressbar = $('#score-bar'); 
     max = (correct * 10);
     time = 20;  //speed
     value = progressbar.val();
@@ -141,16 +141,20 @@ function animateBar(correct) {
 
 	var left = (Math.floor(Math.random() * window.innerWidth) + 1 + 'px');
 	var coin = '<div class="coin" style="left:'+left+'"><div class="front"></div><div class="front_b"></div><div class="back"></div><div class="back_b"></div></div>'
-	console.log(coin)
 	$('body').append(coin);
-	setTimeout(function(){ //You may want to form a closure here... 
-		$('#total_score').text( Number($('#total_score').text())+100 )
-	},2000)
-
-      }
-
-      if(x%20==0){
+	$('#coin-sfx')[0].play();
 	
+	setTimeout(function(x){ 
+		$('#total_score').text( Number($('#total_score').text())+100 )
+		//console.log(x)  NOTICE THE X variable is being kept in the scope using a closure.  Remove it after the 2000 below to see what happens.  
+		 $('#right-sfx')[0].play();
+	         if(x%10==0){
+		       $('#total_score').addClass('run-animation');
+		 }
+
+
+	},2000,x)
+
       }
 
 
@@ -165,12 +169,18 @@ function animateBar(correct) {
 }
 
 
+
+
+
+
+
+
 //Check answer for correct/incorrect and score
 function checkAnswer(num, correctAnswer, button, correct, incorrect) {
 	var realAnswer = $('<p>' + correctAnswer+ '</p>').text(); //converts unicode chars & gets text
 	if ( $(button).text() == realAnswer ) { //compares text of button with text of realAnswer
 		correct++; //score correct
-		$('#right-sfx')[0].play(); //play right answer sfx
+		//$('#right-sfx')[0].play(); //play right answer sfx 
 		animateBar(correct); //advance progress bar
 		$(button).addClass('green-button').stop().delay(2000).queue(function() { //light green and wait
 			nextQuestion(num, correct, incorrect); //get next question
