@@ -147,7 +147,10 @@ function animateBar(correct) {
 	setTimeout(function(x){ 
 		$('#total_score').text( Number($('#total_score').text())+100 )
 		//console.log(x)  NOTICE THE X variable is being kept in the scope using a closure.  Remove it after the 2000 below to see what happens.  
-		 $('#right-sfx')[0].play();
+		$('#coin-sfx')[0].pause();
+	
+       		$('#right-sfx')[0].play();
+
 	         if(x%10==0){
 		       $('#total_score').addClass('run-animation');
 		 }
